@@ -1,26 +1,22 @@
+class Review:
+    all_reviews = []
 
-
-class Reviews:
-
-    review_list= []
     def __init__(self, customer, restaurant, rating):
-        self._customer_obj = customer
-        self._restaurant_obj = restaurant
+        self.customer = customer
+        self.restaurant = restaurant
         self.rating = rating
+        Review.all_reviews.append(self)
+        restaurant.reviews.append(self)
 
-    def rating (self):
+    def rating(self):
         return self.rating
 
-    
     @classmethod
     def all(cls):
-        return  cls.review_list   
-    
+        return cls.all_reviews
 
     def customer(self):
-        return self._customer_obj
-    
+        return self.customer
+
     def restaurant(self):
-        return self._restaurant_obj 
-   
-    
+        return self.restaurant
