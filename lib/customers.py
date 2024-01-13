@@ -1,7 +1,5 @@
 from reviews import Review
 
-
-
 class Customer:
     all_customers = []
 
